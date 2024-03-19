@@ -530,6 +530,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8829749640222525262, guid: 429962dae6105dd4982487bdc62bf304, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 2836126442611312470, guid: 429962dae6105dd4982487bdc62bf304, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 429962dae6105dd4982487bdc62bf304, type: 3}
 --- !u!4 &277540488 stripped
 Transform:
@@ -835,6 +838,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5053858209743476651, guid: 429962dae6105dd4982487bdc62bf304, type: 3}
+      propertyPath: next
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053858209743476651, guid: 429962dae6105dd4982487bdc62bf304, type: 3}
       propertyPath: <CardTransform>k__BackingField
       value: 
       objectReference: {fileID: 517634287}
@@ -934,6 +941,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 8829749640222525262, guid: 429962dae6105dd4982487bdc62bf304, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 2836126442611312470, guid: 429962dae6105dd4982487bdc62bf304, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 429962dae6105dd4982487bdc62bf304, type: 3}
@@ -1507,6 +1517,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8829749640222525262, guid: 429962dae6105dd4982487bdc62bf304, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 2836126442611312470, guid: 429962dae6105dd4982487bdc62bf304, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 429962dae6105dd4982487bdc62bf304, type: 3}
 --- !u!4 &776591273 stripped
 Transform:
@@ -1755,6 +1768,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 8829749640222525262, guid: 429962dae6105dd4982487bdc62bf304, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 2836126442611312470, guid: 429962dae6105dd4982487bdc62bf304, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 429962dae6105dd4982487bdc62bf304, type: 3}
@@ -2440,6 +2456,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 8829749640222525262, guid: 429962dae6105dd4982487bdc62bf304, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 2836126442611312470, guid: 429962dae6105dd4982487bdc62bf304, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 429962dae6105dd4982487bdc62bf304, type: 3}

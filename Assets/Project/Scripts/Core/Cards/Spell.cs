@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [Serializable]
-public class Spell : CardJSON
+public class Spell : Card
 {
     public virtual void Use()
     {

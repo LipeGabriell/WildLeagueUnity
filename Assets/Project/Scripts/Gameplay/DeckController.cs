@@ -47,7 +47,6 @@ namespace Project.Scripts.Gameplay
                             Debug.Log("reset card");
                             SelectedCard.transform.position = CardInitialPosition;
                             UnselectCard();
-                            SelectedCard = null;
                         }
                         else
                         {
@@ -115,6 +114,12 @@ namespace Project.Scripts.Gameplay
         {
             if (!hit.collider.CompareTag("ClickableCard")) return;
             SelectedCard = hit.collider.GetComponent<CardRepresentation>();
+            if (!SelectedCard.ReadyToPlay)
+            {
+                Debug.Log("card cooldown, ignore it");
+                return;
+            }
+
             CardInitialPosition = SelectedCard.transform.position;
             SelectedCard.SelectCard(true);
             ArenaController.Instance.ShowArenaLimit(PlayerController.Instance.side);
@@ -123,6 +128,7 @@ namespace Project.Scripts.Gameplay
         private void UnselectCard()
         {
             SelectedCard.SelectCard(false);
+            SelectedCard = null;
         }
 
         private void PlaceCard(RaycastHit hit)

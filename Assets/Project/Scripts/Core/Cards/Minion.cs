@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [Serializable]
-public class Minion : CardJSON, ISpawnable
+public class Minion : Card, ISpawnable
 {
     public int CardActualHealth { get; set; }
 
