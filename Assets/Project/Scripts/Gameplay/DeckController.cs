@@ -25,48 +25,48 @@ namespace Project.Scripts.Gameplay
         public void OnEnable()
         {
             cardHold = playerInput.Default.CardInteraction;
-            cardHold.started += act =>
+            cardHold.started += CardInteraction;
+
+            cardHold.Enable();
+        }
+
+        private void CardInteraction(InputAction.CallbackContext act)
+        {
+            if (SelectedCard != null)
             {
-                if (SelectedCard != null)
+                if (Physics.Raycast(Camera.ScreenToWorldPoint(Input.mousePosition), Vector3.forward, out var hitCard,
+                        Mathf.Infinity, cardsLayer))
                 {
-                    if (Physics.Raycast(Camera.ScreenToWorldPoint(Input.mousePosition), Vector3.forward, out var hitCard
-                            , Mathf.Infinity, cardsLayer))
-                    {
-                        Debug.Log("select another card");
-                        SelectedCard.transform.position = CardInitialPosition;
-                        UnselectCard();
-                        SelectCard(hitCard);
-                    }
-                    else
-                    {
-                        if (!Physics.Raycast(Camera.ScreenToWorldPoint(Input.mousePosition - CalculateOffset())
-                                , Vector3.forward
-                                , out var hitArena, Mathf.Infinity, arenaLayer
-                            ))
-                        {
-                            Debug.Log("reset card");
-                            SelectedCard.transform.position = CardInitialPosition;
-                            UnselectCard();
-                        }
-                        else
-                        {
-                            PlaceCard(hitArena);
-                            Debug.Log("place card");
-                        }
-                    }
+                    Debug.Log("select another card");
+                    SelectedCard.transform.position = CardInitialPosition;
+                    UnselectCard();
+                    SelectCard(hitCard);
                 }
                 else
                 {
-                    if (Physics.Raycast(Camera.ScreenToWorldPoint(Input.mousePosition), Vector3.forward, out var hitCard
-                            , Mathf.Infinity, cardsLayer))
+                    if (!Physics.Raycast(Camera.ScreenToWorldPoint(Input.mousePosition - CalculateOffset()),
+                            Vector3.forward, out var hitArena, Mathf.Infinity, arenaLayer))
                     {
-                        SelectCard(hitCard);
-                        Debug.Log("select card");
+                        Debug.Log("reset card");
+                        SelectedCard.transform.position = CardInitialPosition;
+                        UnselectCard();
+                    }
+                    else
+                    {
+                        PlaceCard(hitArena);
+                        Debug.Log("place card");
                     }
                 }
-            };
-
-            cardHold.Enable();
+            }
+            else
+            {
+                if (Physics.Raycast(Camera.ScreenToWorldPoint(Input.mousePosition), Vector3.forward, out var hitCard,
+                        Mathf.Infinity, cardsLayer))
+                {
+                    SelectCard(hitCard);
+                    Debug.Log("select card");
+                }
+            }
         }
 
         public void OnDisable()

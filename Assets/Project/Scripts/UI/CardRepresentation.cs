@@ -2,6 +2,7 @@
 using System.Collections;
 using JetBrains.Annotations;
 using Project.Scripts.Core.Base;
+using Project.Scripts.Core.Cards;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -75,17 +76,16 @@ public class CardRepresentation : MonoBehaviour
 
     public void UseCard()
     {
-        return;
         switch (_card.type)
         {
             case "spell":
                 var spell = (Spell)_card;
                 spell.Use();
                 break;
-            // case :
-            //     var build = (Building)_card;
-            //     build.Spawn();
-            //     break;
+            case "building":
+                var build = (Building)_card;
+                build.Spawn();
+                break;
             case "char":
                 var minion = (Minion)_card;
                 minion.Spawn();
